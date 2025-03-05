@@ -32,7 +32,7 @@ The project was successfully validated with a **100% score**, meeting all evalua
 4. If a philosopher **does not eat within a given time**, they die.
 5. The simulation stops **when a philosopher dies or when all have eaten a required number of times**.
 
-### ▌ **Input Arguments**
+### ■ **Input Arguments**
 The program expects the following arguments:
 
 number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]  
@@ -45,7 +45,7 @@ number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_ea
 | `time_to_sleep` | Time (in ms) taken to sleep |
 | `number_of_times_each_philosopher_must_eat` _(optional)_ | If set, the simulation stops once all philosophers have eaten this many times |
 
-### ▌ **Simulation Logs**
+### ■ **Simulation Logs**
 Every philosopher’s state is printed in the format:  
 `[timestamp_in_ms] [philosopher_id] [action]`  
 
