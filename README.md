@@ -23,8 +23,6 @@ The project was successfully validated with a **100% score**, meeting all evalua
 ## 📁 Files
 - `philo.h` → Contains function prototypes and required macros  
 - `philo.c` → Main simulation loop and thread management  
-- `philo_utils.c` → Utility functions for time tracking and synchronization  
-- `philo_actions.c` → Implements philosopher actions (eating, sleeping, thinking)  
 - `Makefile` → Automates compilation (`all`, `clean`, `fclean`, `re`, `bonus`)  
 
 ## 🏗️ **Simulation Rules**
