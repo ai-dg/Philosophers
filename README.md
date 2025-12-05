@@ -1,7 +1,5 @@
 # Philosophers - Multithreading Simulation
 
-<img src="https://github.com/user-attachments/assets/048cee8c-024a-4768-b9c8-bc1066ec22fd" width="500">
-
 ![Score](https://img.shields.io/badge/Score-100%25-brightgreen)  
 📌 **42 School - Concurrency & Synchronization Project**  
 
