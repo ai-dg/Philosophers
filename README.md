@@ -8,6 +8,51 @@ The **Philosophers** project is a **multithreading simulation** based on the **D
 The goal is to manage multiple **philosophers** who must **eat, sleep, and think** while avoiding **starvation** and **deadlocks**.  
 This project introduces **threads, mutexes, and semaphores** for process synchronization.
 
+```mermaid
+flowchart TB
+    %% ===== Nodes =====
+    P1[Philosopher thread]
+    P2[Philosopher thread]
+    P3[Philosopher thread]
+
+    F1[Fork mutex]
+    F2[Fork mutex]
+    F3[Fork mutex]
+
+    M[Monitor thread<br/>death check]
+    S[Shared data<br/>timing rules]
+
+    %% ===== Flow =====
+    P1 -->|lock| F1
+    P1 -->|lock| F2
+
+    P2 -->|lock| F2
+    P2 -->|lock| F3
+
+    P3 -->|lock| F3
+    P3 -->|lock| F1
+
+    P1 -->|eat sleep think| S
+    P2 -->|eat sleep think| S
+    P3 -->|eat sleep think| S
+
+    M -->|check time_to_die| P1
+    M -->|check time_to_die| P2
+    M -->|check time_to_die| P3
+
+    %% ===== Styles =====
+    classDef philosopher fill:#1f77b4,color:#ffffff,stroke:#0d3c61,stroke-width:2px;
+    classDef fork fill:#ff7f0e,color:#ffffff,stroke:#8a3e00,stroke-width:2px;
+    classDef monitor fill:#d62728,color:#ffffff,stroke:#7a0f0f,stroke-width:2px;
+    classDef shared fill:#7f7f7f,color:#ffffff,stroke:#4a4a4a,stroke-width:2px;
+
+    class P1,P2,P3 philosopher
+    class F1,F2,F3 fork
+    class M monitor
+    class S shared
+```
+
+
 ## ▌ Key Features
 ▸ **Implements the Dining Philosophers Problem**  
 ▸ **Uses `pthread_create()`, `pthread_mutex_lock()`, and `pthread_mutex_unlock()`**  
