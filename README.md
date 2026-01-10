@@ -7,7 +7,7 @@
 The **Philosophers** project is a **multithreading simulation** based on the **Dining Philosophers Problem**.  
 The goal is to manage multiple **philosophers** who must **eat, sleep, and think** while avoiding **starvation** and **deadlocks**.  
 This project introduces **threads, mutexes, and semaphores** for process synchronization.
-<img width="1808" height="673" alt="image" src="https://github.com/user-attachments/assets/2fcf1ad3-ca70-465f-a22a-5ad3dab65874" />
+<!-- <img width="1808" height="673" alt="image" src="https://github.com/user-attachments/assets/2fcf1ad3-ca70-465f-a22a-5ad3dab65874" /> -->
 
 
 ```mermaid
