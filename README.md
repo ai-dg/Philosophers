@@ -10,7 +10,9 @@ This project uses **threads and mutexes** for synchronization.
 <img src="assets/overview.png" alt="philosophers — overview" width="760">
 
 
-<!-- Old diagram, kept for reference; the overview image above replaces it.
+<details>
+<summary>Old diagram (mermaid)</summary>
+
 ```mermaid
 flowchart TB
     %% ===== Nodes =====
@@ -54,7 +56,8 @@ flowchart TB
     class M monitor
     class S shared
 ```
--->
+
+</details>
 
 
 ## ▌ Key Features
