@@ -6,7 +6,7 @@
 ## ▌ Description
 The **Philosophers** project is a **multithreading simulation** based on the **Dining Philosophers Problem**.  
 The goal is to manage multiple **philosophers** who must **eat, sleep, and think** while avoiding **starvation** and **deadlocks**.  
-This project introduces **threads, mutexes, and semaphores** for process synchronization.
+This project uses **threads and mutexes** for synchronization.
 <!-- <img width="1808" height="673" alt="image" src="https://github.com/user-attachments/assets/2fcf1ad3-ca70-465f-a22a-5ad3dab65874" /> -->
 
 
@@ -58,7 +58,7 @@ flowchart TB
 ## ▌ Key Features
 ▸ **Implements the Dining Philosophers Problem**  
 ▸ **Uses `pthread_create()`, `pthread_mutex_lock()`, and `pthread_mutex_unlock()`**  
-▸ **Prevents deadlocks using mutexes or semaphores**  
+▸ **Prevents deadlocks with one mutex per fork and an even/odd start order**  
 ▸ **Handles timing constraints and starvation prevention**  
 ▸ **Manages concurrent resource access efficiently**  
 
@@ -66,9 +66,13 @@ flowchart TB
 The project was successfully validated with a **100% score**, meeting all evaluation criteria. 🎉
 
 ## ▌ Files
-- `philo.h` → Contains function prototypes and required macros  
-- `philo.c` → Main simulation loop and thread management  
-- `Makefile` → Automates compilation (`all`, `clean`, `fclean`, `re`, `bonus`)  
+- `philo/include/philo.h` → Function prototypes and shared structures  
+- `philo/src/main.c` → Entry point and argument parsing  
+- `philo/src/init_data.c`, `init_pthread_destroy.c` → Setup and teardown of threads and mutexes  
+- `philo/src/philo_life.c`, `philo_eat.c` → Philosopher routine (eat, sleep, think)  
+- `philo/src/check_death.c` → Death and meal-count monitoring  
+- `philo/src/tools_1.c`, `tools_2.c` → Timing (`gettimeofday()`) and helpers  
+- `philo/Makefile` → Automates compilation (`all`, `clean`, `fclean`, `re`)  
 
 ## ▌ **Simulation Rules**
 1. Philosophers sit at a round table with **one fork between each pair**.
@@ -103,15 +107,10 @@ Example logs:
 | Technique | Description |
 |-----------|-------------|
 | **Mutexes** | Used to protect fork access and avoid race conditions |
-| **Semaphores (Bonus)** | Limits resource access efficiently |
 | **Even/Odd Priority Handling** | Reduces contention over forks |
 
-## ▌ **Bonus Features**
-| Feature | Description |
-|---------|-------------|
-| ▸ **Philosophers as Processes** | Uses semaphores instead of mutexes |
-| ▸ **Centralized Fork Management** | Uses a shared semaphore for all forks |
-| ▸ **More Precise Timing** | Uses `gettimeofday()` for accurate timing |
+## ▌ **Bonus**
+Not implemented. The subject's bonus (philosophers as processes synchronised with semaphores) is not part of this repository.
 
 ## ▌ Compilation & Usage
 ### ■ **Compile the Program**
